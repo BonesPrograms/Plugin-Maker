@@ -12,3 +12,4 @@ c:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0\refint\Plu
 c:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0\PluginMaker.pdb
 c:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0\PluginMaker.genruntimeconfig.cache
 c:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0\ref\PluginMaker.dll
+c:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0\PluginMaker.sourcelink.json

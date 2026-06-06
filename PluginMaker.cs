@@ -4,7 +4,17 @@ namespace BonesPluginMaker;
 
 public class PluginMaker
 {
+
+    static readonly string[] Insertions =
+    [
+      $"    <Reference Include=\"{InteropAssembly}\"/>",
+      $"    <Reference Include=\"{Il2cppmscorlib}\"/>",
+      $"    <Reference Include=\"{CoreModule}\"/>",
+
+    ];
     const string ModsRoot = @"C:\Users\user\Desktop\VietnamWarModLab";
+    const string CoreModule = @"C:\Program Files (x86)\Steam\steamapps\common\VietnamWar\BepInEx\interop\UnityEngine.CoreModule.dll";
+    const string Il2cppmscorlib = @"C:\Program Files (x86)\Steam\steamapps\common\VietnamWar\BepInEx\interop\Il2Cppmscorlib.dll";
     const string InteropAssembly = @"C:\Program Files (x86)\Steam\steamapps\common\VietnamWar\BepInEx\interop\Assembly-CSharp.dll";
     public void Make()
     {
@@ -29,7 +39,7 @@ public class PluginMaker
         Console.WriteLine($"{name} created in {pluginPath}");
     }
 
-    void AddInteropReference(string name, string path)
+    static void AddInteropReference(string name, string path)
     {
         string csproj = $@"{path}\{name}.csproj";
         List<string> text = GetAndModifyText(csproj);
@@ -43,8 +53,9 @@ public class PluginMaker
     static List<string> GetAndModifyText(string csproj)
     {
         List<string> text = [.. File.ReadAllLines(csproj)];
-        int insertion = text.IndexOf("  </ItemGroup>");
-        text.Insert(insertion, $"    <Reference Include=\"{InteropAssembly}\"/>");
+        int spot = text.IndexOf("  </ItemGroup>");
+        foreach (var insert in Insertions)
+            text.Insert(spot, insert);
         return text;
     }
 
