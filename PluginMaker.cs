@@ -13,9 +13,9 @@ public class PluginMaker
 
     ];
     const string ModsRoot = @"C:\Users\user\Desktop\VietnamWarModLab";
-    const string CoreModule = @"C:\Program Files (x86)\Steam\steamapps\common\VietnamWar\BepInEx\interop\UnityEngine.CoreModule.dll";
-    const string Il2cppmscorlib = @"C:\Program Files (x86)\Steam\steamapps\common\VietnamWar\BepInEx\interop\Il2Cppmscorlib.dll";
-    const string InteropAssembly = @"C:\Program Files (x86)\Steam\steamapps\common\VietnamWar\BepInEx\interop\Assembly-CSharp.dll";
+    const string CoreModule = @"../interop\UnityEngine.CoreModule.dll";
+    const string Il2cppmscorlib = @"../interop\Il2Cppmscorlib.dll";
+    const string InteropAssembly = @"../interop\Assembly-CSharp.dll";
     public void Make()
     {
         string pluginName = EnterName();
@@ -42,7 +42,7 @@ public class PluginMaker
     static void AddInteropReference(string name, string path)
     {
         string csproj = $@"{path}\{name}.csproj";
-        List<string> text = GetAndModifyText(csproj);
+        List<string> text = GetAndModifyText(csproj, name);
         using (StreamWriter writer = new(csproj))
         {
             foreach (var txt in text)
@@ -50,12 +50,15 @@ public class PluginMaker
         }
     }
 
-    static List<string> GetAndModifyText(string csproj)
+    static List<string> GetAndModifyText(string csproj, string name)
     {
         List<string> text = [.. File.ReadAllLines(csproj)];
         int spot = text.IndexOf("  </ItemGroup>");
         foreach (var insert in Insertions)
             text.Insert(spot, insert);
+        int nextspot = text.IndexOf("    <Product>My first plugin</Product>");
+        string newstring = text[nextspot].Replace("My first plugin", name);
+        text[nextspot] = newstring;
         return text;
     }
 
