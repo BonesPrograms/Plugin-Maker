@@ -1,18 +1,17 @@
 using System.Diagnostics;
+using BonesClassLibrary.FileFinders;
 
 namespace BonesPluginMaker;
 
 public class PluginMaker
 {
-
     static readonly string[] Insertions =
     [
       $"    <Reference Include=\"{InteropAssembly}\"/>",
       $"    <Reference Include=\"{Il2cppmscorlib}\"/>",
       $"    <Reference Include=\"{CoreModule}\"/>",
-
     ];
-    const string ModsRoot = @"C:\Users\user\Desktop\VietnamWarModLab";
+    static readonly string ModsRoot = VietnamWarModLab.Path;
     const string CoreModule = @"../interop\UnityEngine.CoreModule.dll";
     const string Il2cppmscorlib = @"../interop\Il2Cppmscorlib.dll";
     const string InteropAssembly = @"../interop\Assembly-CSharp.dll";
@@ -41,7 +40,7 @@ public class PluginMaker
 
     static void AddInteropReference(string name, string path)
     {
-        string csproj = $@"{path}\{name}.csproj";
+        string csproj = $@"{path}\{name}.csproj"; //could use directory.getfile here
         List<string> text = GetAndModifyText(csproj, name);
         using (StreamWriter writer = new(csproj))
         {
