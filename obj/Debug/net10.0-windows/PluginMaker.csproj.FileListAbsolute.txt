@@ -17,3 +17,4 @@ C:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0-windows\re
 C:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0-windows\PluginMaker.pdb
 C:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0-windows\PluginMaker.genruntimeconfig.cache
 C:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\obj\Debug\net10.0-windows\ref\PluginMaker.dll
+C:\Users\user\Desktop\VietnamWarModLab\Plugin Maker\bin\Debug\net10.0-windows\0Harmony.dll
