@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\VietnamWarModLab\\Plugin Maker\\PluginMaker.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\C#\\VietnamWarModLab\\Plugin Maker\\PluginMaker.csproj",
       "projectName": "PluginMaker",
-      "projectPath": "C:\\Users\\user\\Desktop\\VietnamWarModLab\\Plugin Maker\\PluginMaker.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\C#\\VietnamWarModLab\\Plugin Maker\\PluginMaker.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\VietnamWarModLab\\Plugin Maker\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\C#\\VietnamWarModLab\\Plugin Maker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
